@@ -1,0 +1,77 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.qada-nav {
+	padding: 0 20px;
+	height: 80px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	background-color: transparent;
+	transition: .3s;
+	z-index: 12;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+
+.qada-nav-logo svg {
+	height: 40px;
+}
+
+.qada-nav-links {
+	display: inline-flex;
+}
+
+.qada-nav-links .qada-nav-link {
+	text-decoration: none;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 0 10px;
+}
+
+.qada-nav-links a span {
+	font-size: 10px;
+}
+
+.qada-nav-active {
+	background-color: #FFFFFF;
+}
+
+#qada-theme-switch {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.qada-theme-switch--icon {
+	height: 30px;
+}
+
+.qada-theme-switch--state {
+	font-size: 15px
+}
+
+.qada-content {
+	/*margin-top: 80px;*/
+}
+
+.qada-footer {
+	width: 100%;
+	min-height: 100px;
+	display: flex;
+	background-color: red;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.qada-footer--nav {
+
+}

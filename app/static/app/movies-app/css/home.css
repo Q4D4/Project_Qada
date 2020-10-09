@@ -1,0 +1,188 @@
+@import url("//cdn.web-fonts.ge/fonts/bpg-arial-caps/css/bpg-arial-caps.min.css");
+@import url("//cdn.web-fonts.ge/fonts/bpg-arial/css/bpg-arial.min.css");
+
+
+.qada-home-header {
+	width: 100%;
+	height: 420px;
+	position: relative;
+	display: flex;
+	overflow: hidden;
+	background-color: #000000;
+}
+
+.home-slider-image {
+	height: 100%;
+	object-fit: cover;
+	position: absolute;
+	/*width: 70%;*/
+	top: 0;
+	z-index: 1;
+}
+
+.home-slider-overlay {
+	/*background: linear-gradient(
+		90deg,
+		rgba(0,0,0,1) 0%,
+		rgba(0,0,0,1) 5%,
+		rgba(0,0,0,1) 10%,
+		rgba(0,0,0,1) 15%,
+		rgba(0,0,0,1) 20%,
+		rgba(0,0,0,0.9) 25%,
+		rgba(0,0,0,0.8) 30%,
+		rgba(0,0,0,0.7) 35%,
+		rgba(0,0,0,0.6) 40%,
+		rgba(0,0,0,0.5) 45%,
+		rgba(0,0,0,0.4) 50%,
+		rgba(0,0,0,0.5) 55%,
+		rgba(0,0,0,0.6) 60%,
+		rgba(0,0,0,0.7) 65%,
+		rgba(0,0,0,0.8) 70%,
+		rgba(0,0,0,0.9) 75%,
+		rgba(0,0,0,1) 80%,
+		rgba(0,0,0,1) 85%,
+		rgba(0,0,0,1) 90%,
+		rgba(0,0,0,1) 95%,
+		rgba(0,0,0,1) 100%
+	);*/
+	background: linear-gradient(
+		90deg,
+		rgb(0, 0, 0) 0%,
+		rgb(0, 0, 0) 10%,
+		rgb(0, 0, 0) 20%,
+		rgba(0, 0, 0, 0.9) 30%,
+		rgba(0, 0, 0, 0.6) 40%,
+		rgba(0, 0, 0, 0.3) 50%,
+		rgba(0, 0, 0, 0.6) 60%,
+		rgba(0, 0, 0, 0.9) 70%,
+		rgb(0, 0, 0) 80%,
+		rgb(0, 0, 0) 90%,
+		rgb(0, 0, 0) 100%
+	);
+	width: 100%;
+	height: 100%;
+	top: 0;
+	z-index: 2;
+	/*opacity: .5;*/
+	position: absolute;
+}
+
+.swiper-slide {
+	text-align: center;
+	font-size: 18px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+	/*background-color: #000;*/
+}
+
+.latest-movies--wrapper {
+	overflow: hidden;
+}
+
+.latest-series--wrapper {
+	overflow: hidden;
+}
+
+.home-slide-next,
+.home-slide-prev {
+	position: absolute;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	transition: .3s;
+	justify-content: center;
+	width: 10%;
+	cursor: pointer;
+	z-index: 10;
+}
+
+.home-slide-next {
+	right: 0;
+}
+
+.home-slide-prev {
+	left: 0;
+}
+
+.home-slide-next.swiper-button-disabled,
+.home-slide-prev.swiper-button-disabled {
+	opacity: .5;
+}
+
+.home-slider-pagination {
+	position: absolute;
+	text-align: center;
+	z-index: 10;
+	bottom: 0;
+	width: 100%;
+	height: 30px;
+	/*justify-content: center;*/
+}
+
+.home-slider-pagination .swiper-pagination-bullet {
+	width: 20px;
+	height: 20px;
+	margin: 5px;
+	/*background-color: green;*/
+	border: 1px solid #00DD00;
+	border-radius: 50%;
+	display: inline-block;
+}
+
+.home-slider-pagination .swiper-pagination-bullet-active {
+	background-color: #00DD00;
+}
+
+/* LATEST MOVIES AND SERIES */
+.latest-movies--header,
+.latest-series--header {
+	display: block;
+	position: relative;
+	height: 100px;
+	line-height: 100px;
+}
+
+.latest-link {
+	position: absolute;
+	left: 0;
+	text-decoration: none;
+}
+
+.latest-movies--next,
+.latest-movies--prev,
+ .latest-series--next,
+.latest-series--prev {
+	position: absolute;
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+
+.latest-movies--next,
+.latest-series--next {
+	right: 0;
+}
+
+.latest-movies--prev,
+.latest-series--prev {
+	right: 50px;
+}
+
+
+
+.latest-movies--prev img,
+.latest-movies--next img,
+.latest-series--prev img,
+.latest-series--next img {
+	width: 50px;
+}

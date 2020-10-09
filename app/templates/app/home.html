@@ -1,0 +1,73 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block title %}ფილმები ქართულად, სერიალები ქართულად {% endblock %}
+
+{% block styles %}<link rel="stylesheet" type="text/css" href="{% static 'app/movies-app/css/home.css' %}" />
+	<link id="localTheme" rel="stylesheet" type="text/css" href="{% static 'app/movies-app/css/themes/home_light.css' %}" />{% endblock %}
+
+{% block content %}
+		<header class="qada-home-header" id="home-slider">
+			<div class="swiper-wrapper">
+				{% for movie in slider_data %}
+				<div class="swiper-slide">
+					<div class="home-slider-overlay"></div>
+					<img class="home-slider-image" src="{{movie.background_image}}" />
+				</div>
+				{% endfor %}
+			</div>
+			<!-- ADD PAGINATION -->
+			<div class="home-slider-pagination"></div>
+			<!-- ADD ARROWS -->
+			<div class="home-slide-next"><img src="{% static 'app/movies-app/images/icons/home-arrow-next.svg' %}" /></div>
+			<div class="home-slide-prev"><img src="{% static 'app/movies-app/images/icons/home-arrow-prev.svg' %}" /></div>
+		</header>
+		<div class="latest-movies">
+			<div class="latest-movies--header">
+				<a class="latest-link" href='#'>
+					<h1>ფილმები ქართულად</h1>
+				</a>
+				<div class="latest-movies--next">
+					<img src="{% static 'app/movies-app/images/icons/latest-arrow-next.svg' %}" />
+				</div>
+				<div class="latest-movies--prev">
+					<img src="{% static 'app/movies-app/images/icons/latest-arrow-prev.svg' %}" />
+				</div>	
+			</div>
+			<div class="latest-movies--wrapper">
+				<div class="swiper-wrapper">
+				{% for movie in movies %}
+					<div class="swiper-slide">
+						<img src="{{ movie.film_poster_low }}" />
+					</div>
+				{% endfor %}
+				</div>
+			</div>
+		</div>
+		<div class="latest-series">
+			<div class="latest-series--header">
+				<a class="latest-link" href='#'>
+					<h1>სერიალები ქართულად</h1>
+				</a>
+				<div class="latest-series--next">
+					<img src="{% static 'app/movies-app/images/icons/latest-arrow-next.svg' %}" />
+				</div>
+				<div class="latest-series--prev">
+					<img src="{% static 'app/movies-app/images/icons/latest-arrow-prev.svg' %}" />
+				</div>	
+			</div>
+			<div class="latest-series--wrapper">
+				<div class="swiper-wrapper">
+				{% for serie in series %}
+					<div class="swiper-slide">
+						<img src="{{ serie.serie_poster_low }}" />
+					</div>
+				{% endfor %}
+				</div>
+			</div>
+		</div>
+{% endblock %}
+
+{% block theme_dark %}{% static 'app/movies-app/css/home_dark.css' %}{% endblock %}
+
+{% block scripts %}<script type="text/javascript" src="{% static 'app/movies-app/js/home/home.js' %}"></script>{% endblock %}

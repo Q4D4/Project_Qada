@@ -1,0 +1,115 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{% block title %}{% endblock %} - Project QADA</title>
+	<!-- META PROPERTIES -->
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="author" content="QADA" />
+	<!-- END OF META PROPERTIES -->
+	<!-- GLOBAL STYLESHEETS -->
+	<link rel="stylesheet" type="text/css" href="{% static 'app/movies-app/css/main.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'app/movies-app/css/swiper.css' %}">
+	<link id="globalTheme" rel="stylesheet" type="text/css" href="{% static 'app/movies-app/css/themes/main_light.css' %}">
+	<!-- END OF GLOBAL STYLESHEETS -->
+	<!-- LOCAL STYLESHEETS -->
+	{% block styles %}{% endblock %}
+	<!-- END OF LOCAL STYLESHEETS -->
+	<!-- GLOBAL SCRIPTS -->
+	<script type="text/javascript" src="{% static 'app/movies-app/js/swiper.js' %}"></script>
+	<!-- END OF GLOBAL SCRIPTS -->
+</head>
+<body>
+	<!-- NAVIGATION -->
+	<nav id="qada-nav" class="qada-nav">
+		<a href="{% url 'app-movies-index' %}" class="qada-nav-logo">
+			<svg viewBox="0 0 59 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path id="qada-logo-q" fill="black"/>
+				<path id="qada-logo-movie" fill="black"/>
+			</svg>
+		</a>
+		<div class="qada-nav-links">
+			<a class="qada-nav-link" href="{% url 'app-movies-movies' %}">
+				<svg class="qada-svg-icon qada-svg-icon--movies" width="30" height="24" viewBox="0 0 30 24" fill="#000" xmlns="http://www.w3.org/2000/svg">
+					<path id="qada-movies-icon-button" fill-rule="evenodd" clip-rule="evenodd"></path>
+					<path id="qada-movies-icon-border" fill-rule="evenodd" clip-rule="evenodd"></path>
+				</svg>
+				<span>
+					ფილმები
+				</span>
+			</a>
+			<a class="qada-nav-link" href="{% url 'app-movies-series' %}">
+				<svg class="qada-svg-icon qada-svg-icon--series" width="30" height="24" viewBox="0 0 30 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path id="qada-series-icon-button" fill-rule="evenodd" clip-rule="evenodd" fill="#000"></path>
+					<rect x="0.75" y="0.75" width="28.5" height="22.5" rx="3.25" stroke="#000" stroke-width="1.5"></rect>
+				</svg>
+				<span>
+					სერიალები
+				</span>
+			</a>
+		</div>
+		<div class="qada-search">
+			<input type="search" />
+		</div>
+		<div id="qada-theme-switch">
+			<svg class="qada-theme-switch--icon" aria-hidden="true" focusable="false" data-prefix="far" data-icon="lightbulb" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512">
+				<path id="qada-bulb" fill="#000"></path>
+			</svg>
+			<span class="qada-theme-switch--state" id="qada-theme-state">მუქი თემა</span>
+		</div>
+	</nav>
+	<!-- END OF NAVIGATION -->
+	<!-- CONTENT -->
+	<main id="qada-root" class="qada-content">
+	{% block content %}{% endblock %}
+	</main>
+	<!-- END OF CONTENT -->
+	<!-- FOOTER -->
+	<footer class="qada-footer">
+		<nav class="qada-footer--nav">
+			<a href="{% url 'app-movies-index' %}">მთავარი</a>
+			<a href="{% url 'app-movies-movies' %}">ფილმები</a>
+			<a href="{% url 'app-movies-series' %}">სერიალები</a>
+		</nav>
+		<div>
+			<strong>რესურსები აღებულია<a target="_blank" rel="noreferrer noopener" href="https://geo.saitebi.ge/"> Geo.Saitebi.Ge</a> - დან.</strong>
+		</div>
+	</footer>
+	<!-- END OF FOOTER -->
+	<!-- THEME CONTROL -->
+	<script type="text/javascript">
+		if(!localStorage.getItem('theme')){
+			localStorage.setItem('theme', 'light');
+		}
+
+		let currentTheme = localStorage.getItem('theme');
+		let mainThemeLinkElement = document.getElementById('globalTheme');
+		let localThemeLinkElement = document.getElementById('localTheme');
+		let switchElement = document.getElementById('qada-theme-switch');
+		let themeState = document.getElementById('qada-theme-state');
+
+		if(currentTheme == 'dark'){
+			mainThemeLinkElement.href = '{% static "app/movies-app/css/themes/main_dark.css" %}';
+			localThemeLinkElement.href = '{% block theme_dark %}{% endblock %}';
+			switchElement.className = 'qada-theme-switch--dark';
+			themeState.textContent = 'ღია თემა';
+		}
+
+		function handleThemeSwitch(){
+			if(currentTheme == 'dark'){
+
+			}else if(currentTheme == 'light'){
+
+			}
+		}
+	</script>
+	<!-- END OF THEME CONTROL -->
+	<!-- GLOBAL SCRIPTS -->
+	<script type="text/javascript" src="{% static 'app/movies-app/js/main.js' %}"></script>
+	<!-- END OF GLOBAL SCRIPTS -->
+	<!-- LOCAL SCRIPTS -->
+	{% block scripts %}{% endblock %}
+	<!-- END OF LOCAL SCRIPTS -->
+</body>
+</html>
